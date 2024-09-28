@@ -1,12 +1,14 @@
 .idea/
+.vscode/
 *.iml
 *.ipr
 *.iws
 lib/
 run/
 out/
+bin/
 build/
 .gradle/
 classes/
 lombok.config
-src/main/resources/english.zip
+extra.properties
