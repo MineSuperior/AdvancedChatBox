@@ -169,24 +169,24 @@ public class CommandColorer implements IMessageFormatter, IJsonApplier, IScreenS
         return new StringMatch(range.get(input), range.getStart(), range.getEnd());
     }
 
+    @SuppressWarnings("unchecked") // Compiler and LSP are disagreeing :(
     @Override
     public JsonObject save() {
         JsonObject obj = new JsonObject();
-        // Compiler is weird and casting is required
         ConfigStorage.writeOptions(obj, CommandColorerStorage.NAME,
-                (List<SaveableConfig<?>>) CommandColorerStorage.OPTIONS);
+                (List<SaveableConfig<?>>) (List<?>) CommandColorerStorage.OPTIONS);
         return obj;
     }
 
+    @SuppressWarnings("unchecked") // Compiler and LSP are disagreeing :(
     @Override
     public void load(JsonElement element) {
         if (!element.isJsonObject()) {
             return;
         }
         JsonObject obj = element.getAsJsonObject();
-        // Compiler is weird and casting is required
         ConfigStorage.readOptions(obj, CommandColorerStorage.NAME,
-                (List<SaveableConfig<?>>) CommandColorerStorage.OPTIONS);
+                (List<SaveableConfig<?>>) (List<?>) CommandColorerStorage.OPTIONS);
     }
 
     @Override
