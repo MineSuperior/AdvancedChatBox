@@ -64,7 +64,7 @@ public class ChatBoxConfigStorage implements IConfigHandler {
                 .fromConfig("availableSuggestionColor", new ConfigColor(translate("availablesuggestioncolor"),
                         new Color(150, 150, 150, 255), translate("info.availablesuggestioncolor")));
 
-        public static final ImmutableList<SaveableConfig<? extends IConfigBase>> OPTIONS =
+        public static final List<SaveableConfig<?>> OPTIONS =
                 ImmutableList.of(HIGHLIGHT_COLOR, UNHIGHLIGHT_COLOR, BACKGROUND_COLOR, SUGGESTION_SIZE,
                         REMOVE_IDENTIFIER, PRUNE_PLAYER_SUGGESTIONS, AVAILABLE_SUGGESTION_COLOR);
     }
@@ -90,7 +90,7 @@ public class ChatBoxConfigStorage implements IConfigHandler {
         // )
         // );
 
-        public static final ImmutableList<SaveableConfig<? extends IConfigBase>> OPTIONS = ImmutableList.of(HOVER_TEXT
+        public static final List<SaveableConfig<?>> OPTIONS = ImmutableList.of(HOVER_TEXT
         // SUGGEST_CAPITAL
         );
     }
