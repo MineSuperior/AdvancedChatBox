@@ -1,7 +1,7 @@
 plugins {
-	id 'fabric-loom' version '1.7-SNAPSHOT'
-	id 'maven-publish'
-	id "io.freefair.lombok" version "8.6"
+	id "fabric-loom" version "1.11-SNAPSHOT"
+	id "maven-publish"
+	id "io.freefair.lombok" version "8.10"
 }
 
 // apply from: 'https://raw.githubusercontent.com/DarkKronicle/GradleScripts/main/gradle/publish.gradle'
@@ -26,9 +26,9 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "com.github.sakura-ryoko:malilib:${project.malilib_version}"
-	//modImplementation "com.github.DarkKronicle:AdvancedChatCore:${project.advancedchat_version}"
-	modImplementation "io.github.darkkronicle:AdvancedChatCore:${project.advancedchat_version}" // only used to build the mod locally
-	// modImplementation files("libs/AdvancedChatCore-${project.advancedchat_version}.jar") // only used to build the mod locally
+	//modImplementation "com.github.DarkKronicle:AdvancedChatCore:${project.mod_version}"
+	modImplementation "io.github.darkkronicle:AdvancedChatCore:${project.minecraft_version}-${project.mod_version}"
+	// modImplementation files("libs/AdvancedChatCore-${project.mod_version}.jar")
 
 	implementation "org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}"
 	include "org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}"
